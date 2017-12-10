@@ -4,13 +4,11 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.util.Stack;
-
-import static java.sql.Types.NULL;
 
 public class MainActivity extends AppCompatActivity {
     boolean temp_decimal = false;
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         AB.hide();
         exp = (TextView) findViewById(R.id.exp);
         ans = (TextView) findViewById(R.id.ans);
-        int orientation = this.getResources().getConfiguration().orientation;
+        final int orientation = this.getResources().getConfiguration().orientation;
         Button b0 = (Button) findViewById(R.id.b0);
         b0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -246,7 +244,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String str = exp.getText().toString();
-                if(!TextUtils.isEmpty(str) && stack.empty() && str.charAt(str.length()-1)!='.' && str.charAt(str.length()-1)!='(') {
+                if(!TextUtils.isEmpty(str) && stack.empty()
+                        && str.charAt(str.length()-1)!='.'
+                        && str.charAt(str.length()-1)!='(') {
                     str += '+';
                     exp.setText(str);
                     stack.push('+');
@@ -259,7 +259,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String str = exp.getText().toString();
-                if(!TextUtils.isEmpty(str) && stack.empty() && str.charAt(str.length()-1)!='.' && str.charAt(str.length()-1)!='(') {
+                if(!TextUtils.isEmpty(str) && stack.empty()
+                        && str.charAt(str.length()-1)!='.'
+                        && str.charAt(str.length()-1)!='(') {
                     str += '-';
                     exp.setText(str);
                     stack.push('-');
@@ -272,7 +274,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String str = exp.getText().toString();
-                if(!TextUtils.isEmpty(str) && stack.empty() && str.charAt(str.length()-1)!='.' && str.charAt(str.length()-1)!='(') {
+                if(!TextUtils.isEmpty(str) && stack.empty()
+                        && str.charAt(str.length()-1)!='.'
+                        && str.charAt(str.length()-1)!='(') {
                     str += '×';
                     exp.setText(str);
                     stack.push('×');
@@ -285,7 +289,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String str = exp.getText().toString();
-                if(!TextUtils.isEmpty(str) && stack.empty() && str.charAt(str.length()-1)!='.' && str.charAt(str.length()-1)!='(') {
+                if(!TextUtils.isEmpty(str) && stack.empty()
+                        && str.charAt(str.length()-1)!='.'
+                        && str.charAt(str.length()-1)!='(') {
                     str += '÷';
                     exp.setText(str);
                     stack.push('÷');
@@ -300,7 +306,12 @@ public class MainActivity extends AppCompatActivity {
                 String str = exp.getText().toString();
                 if(!TextUtils.isEmpty(str) && stack.empty()
                         && str.charAt(str.length()-1)!='.') {
-                    ans.setText(evaluate(str)+"");
+                    brac.push(')');
+                    if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+                        ans.setText(evaluate_port(str)+"");
+                    }
+                    else
+                        ans.setText(evaluate_land("("+str)+"");
                 }
             }
         });
@@ -563,7 +574,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     String str = exp.getText().toString();
-                    if(!TextUtils.isEmpty(str) && stack.empty() && str.charAt(str.length()-1)!='.' && str.charAt(str.length()-1)!='(') {
+                    if(!TextUtils.isEmpty(str) && stack.empty()
+                            && str.charAt(str.length()-1)!='.'
+                            && str.charAt(str.length()-1)!='(') {
                         str += '^';
                         exp.setText(str);
                         stack.push('^');
@@ -576,7 +589,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     String str = exp.getText().toString();
-                    if(!TextUtils.isEmpty(str) && stack.empty() && str.charAt(str.length()-1)!='.' && str.charAt(str.length()-1)!='(') {
+                    if(!TextUtils.isEmpty(str) && stack.empty()
+                            && str.charAt(str.length()-1)!='.'
+                            && str.charAt(str.length()-1)!='(') {
                         str += '%';
                         exp.setText(str);
                         stack.push('%');
@@ -668,7 +683,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     String str = exp.getText().toString();
-                    if(!TextUtils.isEmpty(str) && !(str.charAt(str.length()-1) == '+'
+                    if(!TextUtils.isEmpty(str)
+                            && !(str.charAt(str.length()-1) == '+'
                             || str.charAt(str.length()-1) == '-'
                             ||str.charAt(str.length()-1) == '×'
                             || str.charAt(str.length()-1) == '÷'
@@ -690,7 +706,8 @@ public class MainActivity extends AppCompatActivity {
                     String str = exp.getText().toString();
                     if(!TextUtils.isEmpty(str)) {
                         if(str.charAt(str.length()-1)=='(') {
-                            if(str.charAt(str.length()-2)=='s' || str.charAt(str.length()-2)=='g') {
+                            if(str.charAt(str.length()-2)=='s'
+                                    || str.charAt(str.length()-2)=='g') {
                                 String newStr = "";
                                 for(int i=0;i<str.length()-4;i++)
                                     newStr += str.charAt(i);
@@ -766,16 +783,211 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+     double evaluate_port(String exp) {
+        /* Create stacks for operators and operands */
+        Stack<Integer> op  = new Stack<>();
+        Stack<Double> val = new Stack<>();
+        /* Create temporary stacks for operators and operands */
+        Stack<Integer> optmp  = new Stack<>();
+        Stack<Double> valtmp = new Stack<>();
+        String input = exp;
+        input = "0" + input;
+        input = input.replaceAll("-","+-");
+        /* Store operands and operators in respective stacks */
+        String temp = "";
+        for (int i = 0;i < input.length();i++)
+        {
+            char ch = input.charAt(i);
+            if (ch == '-')
+                temp = "-" + temp;
+            else if (ch != '+' &&  ch != '×' && ch != '÷')
+                temp = temp + ch;
+            else
+            {
+                val.push(Double.parseDouble(temp));
+                op.push((int)ch);
+                temp = "";
+            }
+        }
+        val.push(Double.parseDouble(temp));
+        /* Create char array of operators as per precedence */
+        /* -ve sign is already taken care of while storing */
+        char operators[] = {'÷','×','+'};
+        /* Evaluation of expression */
+        for (int i = 0; i < 3; i++)
+        {
+            boolean it = false;
+            while (!op.isEmpty())
+            {
+                int optr = op.pop();
+                double v1 = val.pop();
+                double v2 = val.pop();
+                if (optr == operators[i])
+                {
+                    /* if operator matches evaluate and store in temporary stack */
+                    if (i == 0)
+                    {
+                        valtmp.push(v2 / v1);
+                        it = true;
+                        break;
+                    }
+                    else if (i == 1)
+                    {
+                        valtmp.push(v2 * v1);
+                        it = true;
+                        break;
+                    }
+                    else if (i == 2)
+                    {
+                        valtmp.push(v2 + v1);
+                        it = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    valtmp.push(v1);
+                    val.push(v2);
+                    optmp.push(optr);
+                }
+            }
+            /* Push back all elements from temporary stacks to main stacks */
+            while (!valtmp.isEmpty())
+                val.push(valtmp.pop());
+            while (!optmp.isEmpty())
+                op.push(optmp.pop());
+            /* Iterate again for same operator */
+            if (it)
+                i--;
+        }
+        return val.pop();
+    }
 
-    public int evaluate(String expr)
-    {
+
+    Stack<String> oprtr = new Stack<>();
+    Stack<Double> oprnd = new Stack<>();
+    Double e = 2.718281828;
+    Double pi = 3.14159;
+    public Double evaluate_land(String expr) {
         while(!brac.empty()) {
             expr += brac.pop();
         }
         exp.setText(expr);
-        return NULL;
-    }
+        Log.v("ABC",expr);
+        String newStr = "";
+        for(int i=0;i<expr.length();i++) {
+            if(expr.charAt(i)=='0'
+                    ||expr.charAt(i)=='1'
+                    ||expr.charAt(i)=='2'
+                    ||expr.charAt(i)=='3'
+                    ||expr.charAt(i)=='4'
+                    ||expr.charAt(i)=='5'
+                    ||expr.charAt(i)=='6'
+                    ||expr.charAt(i)=='7'
+                    ||expr.charAt(i)=='8'
+                    ||expr.charAt(i)=='9'
+                    ||expr.charAt(i)=='.') {
+                newStr += expr.charAt(i);
+                Log.v("ABC",newStr);
+            }
+            else {
+                if(expr.charAt(i)!='(' && newStr.length()>0) {
+                    Log.v("ABC", newStr);
+                    double d = Double.parseDouble(newStr);
+                    Log.v("ABC", newStr + d + "");
+                    oprnd.push(d);
+                    newStr = "";
+                }
+                if(expr.charAt(i)=='+'
+                        ||expr.charAt(i)=='-'
+                        ||expr.charAt(i)=='×'
+                        ||expr.charAt(i)=='÷'
+                        ||expr.charAt(i)=='^'
+                        ||expr.charAt(i)=='%'
+                        ||expr.charAt(i)=='(') {
+                    oprtr.push(expr.charAt(i) + "");
+                }
+                else if(expr.charAt(i)==')') {
+                    do {
 
+                        String op = oprtr.peek();
+                        Log.v("ABC", op );
+                        if(op.length()==2)
+                            oprnd.push(calc(oprtr.pop(),oprnd.pop(),0.0));
+                        else
+                            oprnd.push(calc(oprtr.pop(),oprnd.pop(),oprnd.pop()));
+                    } while(oprtr.peek().compareTo("(")!=0);
+                    oprtr.pop();
+                }
+                else {
+                    if(expr.charAt(i)=='e')
+                        oprnd.push(e);
+                    else if(expr.charAt(i)=='π')
+                        oprnd.push(pi);
+                    else if(expr.charAt(i)=='s') {
+                        if(expr.charAt(i+3)=='h') {
+                            oprtr.push("sh");
+                            i+=3;
+                        }
+                        else {
+                            oprtr.push("sn");
+                            i+=2;
+                        }
+                    }
+                    else if(expr.charAt(i)=='c') {
+                        if(expr.charAt(i+3)=='h') {
+                            oprtr.push("ch");
+                            i+=3;
+                        }
+                        else {
+                            oprtr.push("cs");
+                            i+=2;
+                        }
+                    }
+                    else if(expr.charAt(i)=='t') {
+                        if(expr.charAt(i+3)=='h') {
+                            oprtr.push("th");
+                            i+=3;
+                        }
+                        else {
+                            oprtr.push("tn");
+                            i+=2;
+                        }
+                    }
+                    else if(expr.charAt(i)=='l') {
+                        if(expr.charAt(i+2)=='g') {
+                            oprtr.push("lg");
+                            i+=2;
+                        }
+                        else {
+                            oprtr.push("ln");
+                            i++;
+                        }
+                    }
+                }
+            }
+        }
+        return oprnd.pop();
+    }
+    private Double calc( String op,Double b, Double a) {
+        switch(op) {
+            case "+":return a+b;
+            case "-":return a-b;
+            case "×":return a*b;
+            case "÷":return a/b;
+            case "^":return Math.pow(a,b);
+            case "%":return a%b;
+            case "sn":return Math.sin(b);
+            case "cs":return Math.cos(b);
+            case "tn":return Math.tan(b);
+            case "ln":return Math.log(b);
+            case "lg":return Math.log10(b);
+            case "sh":return Math.sinh(b);
+            case "ch":return Math.cosh(b);
+            case "th":return Math.tanh(b);
+        }
+        return 0.0;
+    }
 
 
 

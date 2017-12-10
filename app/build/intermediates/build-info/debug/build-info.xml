@@ -7,22 +7,22 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.0.1"
-    timestamp="1512576433879"
+    timestamp="1512929992365"
     token="-9205776540687673085"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="3339" />
+        duration="2729" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="357" />
+        duration="113" />
     <task
         name="verifier"
-        duration="675" />
+        duration="216" />
 
     <artifact
         location="/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
@@ -30,13 +30,13 @@
 
     <build
         build-mode="FULL"
-        timestamp="1512563953117"
+        timestamp="1512929782966"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
             location="/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
@@ -72,7 +72,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1512576433879"
+        timestamp="1512929992365"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
