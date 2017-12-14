@@ -1,17 +1,18 @@
 package com.example.shivang.calculator;
 
-import android.app.Fragment;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Stack;
 
-public class MainActivity extends AppCompatActivity implements FragmentChangeListner {
+public class MainActivity extends AppCompatActivity {
     boolean temp_decimal = false;
     boolean temp_view = false;
     Stack<Character> stack = new Stack<Character>();
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
     Button badv;
     TextView exp;
     TextView ans;
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +33,17 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
         ans = (TextView) findViewById(R.id.ans);
         final int orientation = this.getResources().getConfiguration().orientation;
         if(orientation == Configuration.ORIENTATION_PORTRAIT) {
-            badv = findViewById(R.id.badv);
-            badv.setText("ADV");
-            final BasicButtons frag = new BasicButtons();
-            getFragmentManager().beginTransaction().add(R.id.container,frag).commit();
-            badv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    replaceFragment(frag);
-                }
-            });
+            mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
+            // Set up the ViewPager with the sections adapter.
+            mViewPager = (ViewPager) findViewById(R.id.container);
+            mViewPager.setAdapter(mSectionsPagerAdapter);
         }
         else {
             final BasicButtons frag1 = new BasicButtons();
-            getFragmentManager().beginTransaction().add(R.id.container_1,frag1).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.container_1,frag1).commit();
             final AdvButtons frag2 = new AdvButtons();
-            getFragmentManager().beginTransaction().add(R.id.container_2,frag2).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.container_2,frag2).commit();
         }
 
     }
@@ -257,19 +255,28 @@ public class MainActivity extends AppCompatActivity implements FragmentChangeLis
     }
 
 
-    @Override
-    public void replaceFragment(Fragment fragment) {
-        if(temp_view == false) {
-            badv.setText("BASIC");
-            AdvButtons frag1 = new AdvButtons();
-            getFragmentManager().beginTransaction().replace(R.id.container,frag1).commit();
-            temp_view = true;
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
         }
-        else {
-            badv.setText("ADV");
-            BasicButtons frag1 = new BasicButtons();
-            getFragmentManager().beginTransaction().replace(R.id.container,frag1).commit();
-            temp_view = false;
+
+        @Override
+        public android.support.v4.app.Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+            if(position==0)
+                return new BasicButtons();
+            else
+                return new AdvButtons();
+        }
+
+        @Override
+        public int getCount() {
+            // Show 3 total pages.
+            return 2;
         }
     }
+
+
 }

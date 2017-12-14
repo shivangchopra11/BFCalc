@@ -8,20 +8,20 @@
         "source": "/Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/res/merged/androidTest/debug/layout_abc_screen_toolbar.xml.flat",
-        "source": "/Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/res/layout/abc_screen_toolbar.xml"
-    },
-    {
         "merged": "/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "/Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/res/drawable-hdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/res/merged/androidTest/debug/color-v23_abc_tint_switch_track.xml.flat",
-        "source": "/Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/res/color-v23/abc_tint_switch_track.xml"
+        "merged": "/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/res/merged/androidTest/debug/layout_abc_screen_toolbar.xml.flat",
+        "source": "/Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/res/layout/abc_screen_toolbar.xml"
     },
     {
         "merged": "/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-xxxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/res/drawable-ldrtl-xxxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/res/merged/androidTest/debug/color-v23_abc_tint_switch_track.xml.flat",
+        "source": "/Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/res/color-v23/abc_tint_switch_track.xml"
     },
     {
         "merged": "/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",

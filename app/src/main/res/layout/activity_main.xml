@@ -15,32 +15,21 @@
         android:background="#0000"
         android:textSize="60dp"
         android:autoSizeTextType="uniform"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layout_height="0dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:id="@+id/ans"
-            android:background="#0000"
-            android:focusable="false"
-            android:textSize="40dp"
-            android:autoSizeTextType="uniform"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:id="@+id/badv"/>
-    </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/container"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8" />
+        android:layout_weight="1"
+        android:id="@+id/ans"
+        android:background="#0000"
+        android:focusable="false"
+        android:textSize="40dp"
+        android:autoSizeTextType="uniform"/>
+
+    <android.support.v4.view.ViewPager
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="8" />
 
 </LinearLayout>
