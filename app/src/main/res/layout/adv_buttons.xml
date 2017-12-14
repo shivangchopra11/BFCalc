@@ -17,7 +17,7 @@
             android:layout_weight="1"
             android:background="#0000">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="sin"
@@ -29,7 +29,7 @@
                 android:minWidth="0dp"
                 android:padding="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="cos"
@@ -41,7 +41,7 @@
                 android:minWidth="0dp"/>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="tan"
@@ -59,7 +59,7 @@
             android:layout_weight="1"
             android:background="#0000">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="ln"
@@ -70,7 +70,7 @@
                 android:minHeight="0dp"
                 android:minWidth="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="log"
@@ -81,7 +81,7 @@
                 android:minHeight="0dp"
                 android:minWidth="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="^"
@@ -99,7 +99,7 @@
             android:layout_weight="1"
             android:background="#0000">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="sinh"
@@ -110,7 +110,7 @@
                 android:minHeight="0dp"
                 android:minWidth="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="cosh"
@@ -121,7 +121,7 @@
                 android:minHeight="0dp"
                 android:minWidth="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="tanh"
@@ -139,7 +139,7 @@
             android:layout_weight="1"
             android:background="#0000">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="π"
@@ -150,7 +150,7 @@
                 android:minHeight="0dp"
                 android:minWidth="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="e"
@@ -161,7 +161,7 @@
                 android:minHeight="0dp"
                 android:minWidth="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="%"
@@ -179,7 +179,7 @@
             android:layout_weight="1"
             android:background="#0000">
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="("
@@ -190,7 +190,7 @@
                 android:minHeight="0dp"
                 android:minWidth="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text=")"
@@ -201,7 +201,7 @@
                 android:minHeight="0dp"
                 android:minWidth="0dp"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="del"
