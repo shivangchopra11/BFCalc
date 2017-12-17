@@ -1,4 +1,4 @@
-#Thu Dec 14 18:06:47 IST 2017
-base.0=/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/transforms/dexMerger/debug/22
+#Sun Dec 17 17:54:04 IST 2017
+base.0=/Users/shivang/AndroidStudioProjects/Calculator2/app/build/intermediates/transforms/dexMerger/debug/60
 path.0=classes.dex
 renamed.0=classes.dex

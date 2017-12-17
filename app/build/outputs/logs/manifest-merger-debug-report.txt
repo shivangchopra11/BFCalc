@@ -4,6 +4,7 @@ ADDED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/Android
 INJECTED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:2:1-21:12
 INJECTED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:2:1-21:12
 INJECTED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:2:1-21:12
+MERGED from [com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32] /Users/shivang/.gradle/caches/transforms-1/files-1.1/view-pager-transforms-1.2.32.aar/8dc606bdffa34b6c938eb8b09ff92a4d/AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/shivang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a7124e2c37efaa013dcfdedaa552e1f3/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/shivang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/59ba011fd22591eee3b8ee623f37d154/AndroidManifest.xml:17:1-28:12
@@ -86,6 +87,8 @@ uses-sdk
 INJECTED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml
 INJECTED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml
+MERGED from [com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32] /Users/shivang/.gradle/caches/transforms-1/files-1.1/view-pager-transforms-1.2.32.aar/8dc606bdffa34b6c938eb8b09ff92a4d/AndroidManifest.xml:23:5-25:41
+MERGED from [com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32] /Users/shivang/.gradle/caches/transforms-1/files-1.1/view-pager-transforms-1.2.32.aar/8dc606bdffa34b6c938eb8b09ff92a4d/AndroidManifest.xml:23:5-25:41
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/shivang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/036c7ac8e018b53dfe6586e9511d7d1d/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/shivang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a7124e2c37efaa013dcfdedaa552e1f3/AndroidManifest.xml:5:5-7:41
