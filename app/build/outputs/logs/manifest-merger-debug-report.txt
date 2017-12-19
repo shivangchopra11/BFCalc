@@ -62,9 +62,9 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/shivang/.gradle/caches
 	android:label
 		ADDED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:9:9-54
+		ADDED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:9:9-47
 	android:icon
-		ADDED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:7:9-42
 	android:allowBackup
 		ADDED from /Users/shivang/AndroidStudioProjects/Calculator2/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
